@@ -13,6 +13,10 @@
         {{ partial "components/post-tags" . }}
       {{ end }}
 
+      {{ partial "components/copyright" . }}
+      {{ partial "components/newsletter" . }}
+      {{ partial "components/wechat" . }}
+
       {{ partial "components/post-edit" . }}
 
       {{ with .GetTerms "authors" }}
@@ -20,13 +24,10 @@
       {{ end }}
 
       {{ partial "components/post-footer" . }}
-      {{ partial "comment.html" . }}
     </div>
     {{ if $hasSidebar }}
       <div class="col-span-2">
-        {{ if .GetTerms "series" }}
-          {{ partial "components/post-series" . }}
-        {{ end }}
+
         {{ if $hasToc }}
           {{ partial "components/post-toc" . }}
         {{ end }}
@@ -47,7 +48,16 @@
         {{ end }}
       </div>
     {{ end }}
+
+    <div
+    class="{{ if not $hasSidebar }}
+      {{- print "lg:col-start-2" -}}
+    {{ end }} bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+  >      
+      {{ partial "comment.html" . }}
+    </div>
   </div>
+
 
   {{/* highlight.js */}}
   {{- if eq .Site.Params.highlight.handler "highlightjs" }}

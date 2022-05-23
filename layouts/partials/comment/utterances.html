@@ -1,20 +1,11 @@
-<script id="utterances" src="https://utteranc.es/client.js"
-        {{- range $key, $value := .Site.Params.comment.utterances }}
-          {{- if and (eq $key "theme") (eq $value "eureka") }}
-            {{- if eq $.Site.Params.colorScheme "light" }}
-              {{ printf "%s=%v" $key "github-light" | safeHTMLAttr }}
-            {{- else if eq $.Site.Params.colorScheme "dark" }}
-              {{ printf "%s=%v" $key "github-dark" | safeHTMLAttr }}
-            {{- else }}
-              {{ printf "%s=%v" $key "preferred-color-scheme" | safeHTMLAttr }}
-            {{- end }}
-          {{- else if or $value (eq $value false) }}
-            {{ printf "%s=%v" $key $value | safeHTMLAttr }}
-          {{- end }}
-        {{- end }}
-        crossorigin="anonymous"
-        async>
+<script src="https://utteranc.es/client.js"
+  repo="{{ .Site.Params.comment.utterances.owner }}/{{ .Site.Params.comment.utterances.repo }}"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
 </script>
+
 <script>
   {{- if eq .Site.Params.colorScheme "light" }}
     if (storageColorScheme == "Auto") {
