@@ -1,5 +1,5 @@
 <div class="text-center">
-  {{- range $name, $path := .Site.Params.socials }}
+  {{- range $name, $path := .Params.socials }}
     {{- if $path }}
       {{- $realName := slicestr $name 2 }}
       <a href="{{ $path | safeURL }}" class="me-2" target="_blank" title="{{ $realName }}">

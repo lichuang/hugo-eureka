@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ $hasToc := and (in .TableOfContents "<li>" ) (.Params.toc) }}
+  {{ $hasToc := and (in .TableOfContents "<li>" ) (.Site.Params.toc) }}
   {{ $hasSidebar := or ($hasToc) (.Params.series) }}
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
     <div

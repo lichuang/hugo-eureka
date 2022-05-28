@@ -1,4 +1,4 @@
-{{ $hasToc := and (in .TableOfContents "<li>" ) (.Params.toc) }}
+{{ $hasToc := and (in .TableOfContents "<li>" ) (.Site.toc) }}
 {{ $hasSidebar := or ($hasToc) (.Params.series) }}
 <div class="lg:pt-12">
     <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
