@@ -55,3 +55,44 @@
   border-top-color: var(--color-eureka);
   border-bottom-color: transparent;
 }
+
+.selected-menu-item-a {
+  @apply text-eureka;
+  border-top-color: var(--color-eureka);
+  border-bottom-color: transparent;
+}
+
+.custom-footer {
+  text-align: center;
+  text-align: -webkit-center;
+  text-align: -moz-center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px dashed #e6e6e6;
+}
+
+.newsletter-submit-button {
+  margin: 15px 0;
+  padding: 3px 7px;
+  display: inline-block;
+  color: $theme-color;
+  border: 1px solid $theme-color;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffffff;
+
+  &:hover {
+    color: $white;
+    background-color: $theme-color;
+    transition: 0.5s;
+  }
+}
+
+.newsletter-email-field {
+  margin: 15px 0;
+  padding: 3px 7px;
+  display: inline-block;
+  border: 1px solid $theme-color;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
