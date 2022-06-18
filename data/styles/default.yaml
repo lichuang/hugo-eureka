@@ -8,9 +8,11 @@ fonts:
 colors:
   light:
     theme: "#38b2ac"
-    primaryBackground: rgba(242, 242, 247, 1)
+    #primaryBackground: rgba(242, 242, 247, 1)
+    primaryBackground: rgba(255, 255, 255, 1)
     secondaryBackground: rgba(255, 255, 255, 1)
-    tertiaryBackground: rgba(242, 242, 247, 1)
+    #tertiaryBackground: rgba(242, 242, 247, 1)
+    tertiaryBackground: rgba(255, 255, 255, 1)
     primaryText: rgba(0, 0, 0, 0.85)
     secondaryText: rgba(0, 0, 0, 0.7)
     tertiaryText: rgba(0, 0, 0, 0.55)
