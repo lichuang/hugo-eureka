@@ -1,4 +1,6 @@
 <div class="text-center">
+      {{ partial "components/newsletter" . }}
+
   {{- range $name, $path := .Site.Params.socials }}
     {{- if $path }}
       {{- $realName := slicestr $name 2 }}
@@ -7,6 +9,7 @@
       </a>
     {{- end }}
   {{- end }}
+
 
   {{ if .Site.LanguagePrefix -}}
     <a href="{{ .Site.LanguagePrefix | absURL }}/index.xml" type="application/rss+xml" target="_blank" class="me-2" title="rss">
@@ -19,7 +22,6 @@
   {{- end }}
 </div>
 
-      {{ partial "components/newsletter" . }}
 
 <div class="text-center">
     <p class="text-sm text-tertiary-text">{{ with .Site.Copyright }}{{ replace . "{year}" now.Year | safeHTML }} &middot; {{ end }}
