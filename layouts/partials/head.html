@@ -168,9 +168,8 @@
 
 {{ partial "custom-head" . }}
 
-{{- with .Site.Params.icon }}
-<link rel="icon" type="image/png" sizes="32x32" href="{{ (partial "get-icon" (dict "icon" . "size" 32)).Permalink }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ (partial "get-icon" (dict "icon" . "size" 180)).Permalink }}">
+{{- if .Site.Params.icon }}
+<link rel="icon" type="image/png" href="{{ .Site.Params.icon | default "/images/avatar.png" | relURL }}" >
 {{- end }}
 
 {{ define "partials/get-icon" }}
